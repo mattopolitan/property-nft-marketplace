@@ -16,13 +16,16 @@
     "incremental": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "isolatedModules": true
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
-, "test/nft.js", "test/marketplace.js"  ],
+    "**/*.tsx",
+    "test/nft.js",
+    "test/marketplace.js"
+  ],
   "exclude": [
     "node_modules"
   ]
