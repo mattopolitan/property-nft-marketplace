@@ -1,22 +1,51 @@
-import { ethers } from "hardhat";
+import { ethers, network } from "hardhat"
+import dotenv from "dotenv"
+import fs from "fs"
 
-async function main() {
-  const currentTimestampInSeconds = Math.round(Date.now() / 1000);
-  const ONE_YEAR_IN_SECS = 365 * 24 * 60 * 60;
-  const unlockTime = currentTimestampInSeconds + ONE_YEAR_IN_SECS;
+function importContractAddressesToEnv (replaceEnv: {
+  marketplaceAddress: string;
+  nftAddress: string;
+  propertyNftAddress: string;
+  networkName: string;
+}) {
+  const { marketplaceAddress, nftAddress, propertyNftAddress, networkName } = replaceEnv;
+  const envFileName = '.env.local'
+  const envFile = fs.readFileSync(envFileName, 'utf-8')
+  const env = dotenv.parse(envFile)
+  env[`MARKETPLACE_CONTRACT_ADDRESS_${networkName}`] = marketplaceAddress
+  env[`NFT_CONTRACT_ADDRESS_${networkName}`] = nftAddress
+  env[`PROPERTY_NFT_CONTRACT_ADDRESS_${networkName}`] = propertyNftAddress
+  const newEnv = Object.entries(env).reduce((env, [key, value]) => {
+    return `${env}${key}=${value}\n`
+  }, '')
 
-  const lockedAmount = ethers.utils.parseEther("1");
-
-  const Lock = await ethers.getContractFactory("Lock");
-  const lock = await Lock.deploy(unlockTime, { value: lockedAmount });
-
-  await lock.deployed();
-
-  console.log(`Lock with 1 ETH and unlock timestamp ${unlockTime} deployed to ${lock.address}`);
+  fs.writeFileSync(envFileName, newEnv)
 }
 
-// We recommend this pattern to be able to use async/await everywhere
-// and properly handle errors.
+async function main() {
+  const Marketplace = await ethers.getContractFactory('Marketplace')
+  const marketplace = await Marketplace.deploy()
+  await marketplace.deployed()
+  console.log(`Marketplace contract deployed at: ${marketplace.address}`)
+
+  const NFT = await ethers.getContractFactory('NFT')
+  const nftToken = await NFT.deploy(marketplace.address)
+  await nftToken.deployed()
+  console.log(`NFT deployed to: ${nftToken.address}`)
+
+  const PropertyToken = await ethers.getContractFactory('PropertyToken')
+  const propertyToken = await PropertyToken.deploy()
+  await propertyToken.deployed()
+  console.log(`Property NFT deployed to: ${propertyToken.address}`)
+
+  importContractAddressesToEnv({
+    marketplaceAddress: marketplace.address, 
+    nftAddress: nftToken.address, 
+    propertyNftAddress: propertyToken.address,
+    networkName: network.name.toUpperCase()
+  })
+}
+
 main().catch((error) => {
   console.error(error);
   process.exitCode = 1;
