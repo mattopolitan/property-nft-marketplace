@@ -26,7 +26,7 @@ export const chains = {
     networkId: 5,
     explorers: [{
       name: 'goerlietherscan',
-      url: 'https://goerli.etherscan.io/',
+      url: 'https://goerli.etherscan.io',
       standard: ''
     }]
   },

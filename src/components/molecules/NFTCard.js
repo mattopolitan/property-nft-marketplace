@@ -161,7 +161,9 @@ export default function NFTCard ({ nft, action, updateNFT }) {
         className={classNames.media}
         alt={name}
         image={image}
-        component="a" onClick={handleCardImageClick}
+        component="img" 
+        loading="lazy"
+        onClick={handleCardImageClick}
       />
 
       <CardContent className={classNames.cardContent} >

@@ -91,6 +91,8 @@ export default function NFTCardCreation ({ addNFTToList }) {
           className={classNames.media}
           alt='Upload image'
           image={fileUrl}
+          component="img" 
+          loading="lazy"
         />
       </label>
       <input

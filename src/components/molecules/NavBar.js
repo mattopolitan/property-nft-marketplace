@@ -18,6 +18,10 @@ const pages = [
   {
     title: 'Mint Property NFT',
     href: '/mint-property-nft'
+  },
+  {
+    title: 'My NFTs',
+    href: '/my-nfts'
   }
 ]
 

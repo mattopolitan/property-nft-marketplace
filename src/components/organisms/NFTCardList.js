@@ -26,7 +26,6 @@ const useStyles = makeStyles((theme) => ({
 
 export function NFT ({ nft, index }) {
   const { account } = useContext(Web3Context)
-  console.log('inside NFT', nft)
   if (!nft.owner) {
     return <NFTCardCreation addNFTToList={addNFTToList}/>
   }
