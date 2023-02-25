@@ -3,14 +3,15 @@
 This is a template source code of a simple NFT Marketplace built as a study project. This project is built with:
 
 ### Frontend: 
-- React JS & Next JS, as the framework
-- Web3JS, interacting EVM blockchain with frontend
+- [React JS](https://reactjs.org/), a JavaScript library for building user interfaces
+- [Next JS](https://nextjs.org/), a React Framework
+- [Web3 JS](https://github.com/web3/web3.js), interacting EVM blockchain with frontend
 ### Backend: 
-- Node JS, hosting website and API
-- TypeScript, provide strong type for JS
+- [Node JS](https://nodejs.org/en/), hosting website and API
+- [TypeScript](https://www.typescriptlang.org/), provide strong type for JavaScript
 ### Blockchain: 
-- Hardhat, for EVM local blockchain devnet & deploy smart contract 
-- Solidity, Smart Contract coding
+- [Hardhat](https://hardhat.org/), for hosting a local EVM blockchain devnet & deploy Smart Contract
+- [Solidity](https://docs.soliditylang.org/en/v0.8.19/), Smart Contract coding
 
 ## Features
 - NFT Listing
