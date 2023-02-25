@@ -41,7 +41,7 @@ export default function NFTCardCreation ({ addNFTToList }) {
     return tokenId
   }
 
-  // TODO: Add more metadata based on different NFT types
+  // TODO: Add more metadata based on Property NFT types
   function createNFTFormDataFile (name, description, file) {
     const formData = new FormData()
     formData.append('name', name)
@@ -91,8 +91,7 @@ export default function NFTCardCreation ({ addNFTToList }) {
           className={classNames.media}
           alt='Upload image'
           image={fileUrl}
-          component="img" 
-          loading="lazy"
+          component="a" 
         />
       </label>
       <input

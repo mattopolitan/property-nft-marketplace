@@ -17,6 +17,7 @@ export default function Home () {
     if (!isReady) return
     const data = await marketplaceContract.fetchAvailableMarketItems()
     const items = await Promise.all(data.map(mapAvailableMarketItems(nftContract)))
+    console.log('items', items)
     setNfts(items)
     setIsLoading(false)
   }

@@ -9,6 +9,7 @@ import { Web3Context } from '../providers/Web3Provider'
 import NavItem from '../atoms/NavItem'
 import ConnectedAccountAddress from '../atoms/ConnectedAccountAddress'
 import WalletConnection from '../atoms/WalletConnection'
+import Image from 'next/image'
 
 const pages = [
   {
@@ -28,7 +29,6 @@ const pages = [
 const NavBar = () => {
   const { account } = useContext(Web3Context)
   const [connectionComponent, setConnectionComponent] = useState(<></>);
-  const logo = '🖼️'
 
   useEffect(() => {
     if(account) {
@@ -42,14 +42,20 @@ const NavBar = () => {
     <AppBar position="static">
       <Container maxWidth="100%">
         <Toolbar disableGutters>
-          <Typography
+          {/* <Typography
             variant="h3"
             noWrap
             component="div"
             sx={{ p: '10px', flexGrow: { xs: 1, md: 0 }, display: 'flex' }}
           >
-            {logo}
-          </Typography>
+            NFT Marketplace
+          </Typography> */}
+          <Image
+            alt='ETH'
+            src='/eth.svg'
+            width="40px"
+            height="40px"
+          />
           <Box sx={{ flexGrow: 1, display: 'flex' }}>
             {pages.map(({ title, href }) => <NavItem title={title} href={href} key={title}/>)}
           </Box>

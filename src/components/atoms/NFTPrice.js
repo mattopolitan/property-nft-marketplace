@@ -45,7 +45,7 @@ export default function NFTPrice ({ nft }) {
         <span style={{ display: 'inline-block', transform: 'translateY(3px)' }}>
           <Image
             alt='ETH'
-            src='/eth.png'
+            src='/eth.svg'
             width="20px"
             height="20px"
             onMouseEnter={handlePopoverOpen}

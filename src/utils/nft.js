@@ -1,10 +1,16 @@
 import axios from 'axios'
 import { ethers } from 'ethers'
 
+const NFT_METADATA_TIMEOUT = 5_000; // only wait for 5s
+
 export async function getTokenMetadataByTokenId (nftContract, tokenId) {
   try {
     const tokenUri = await nftContract.tokenURI(tokenId)
-    const { data: metadata } = await axios.get(tokenUri)
+    const { data: metadata } = await axios({
+      method: 'get',
+      url: tokenUri,
+      timeout: NFT_METADATA_TIMEOUT
+  })
     return metadata
   } catch (error) {
     console.log(error)
