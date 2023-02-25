@@ -61,6 +61,7 @@ yarn run setup-marketplace:localhost
 yarn run dev
 ``` 
 Now you may access the marketplace on [http://localhost:3000](http://localhost:3000).
+
 7. Make sure to use `Localhost 8545` as the Metamask's network.
    - Network Name: `Localhost 8545` (Anything you like)
    - RPC URL: `http://localhost:8545`
