@@ -34,16 +34,33 @@ Please register accounts for the below services:
    - Inside Infura Dashboard, create a New Key with `Web3 API`. Copy `API Key` values into `.env.local`. ![Infura](https://raw.githubusercontent.com/mattopolitan/property-nft-marketplace/main/public/docs/infura.png)
 
 # How to setup the NFT Marketplace on localhost
-1. Run `yarn install` to install all the dependencies you need to run this project.
-2. Run `yarn run node` to start a local EVM blockchain devnet with HardHat.
+Make sure you have all the Prerequistist ready. 
+1. Install all the dependencies you need to run this project.
+``` 
+yarn install 
+```
+2. Start a local EVM blockchain devnet with Hardhat.
+``` 
+yarn run node 
+```
    - A list of 20 private keys with funds are listed. 
    - Make sure to import Account #0 and #1 into Metamask accounts.
 3. Copy `.env.local.example` to `.env.local` and fill it with environment variables.
    - You'll need at least `ACCOUNT_PRIVATE_KEY`, `ACCOUNT2_PRIVATE_KEY`, `PINATA_API_KEY` & `PINATA_SECRET_KEY` in order to start the project.
    - It is recommended to use Account #0 and #1 private key as `ACCOUNT_PRIVATE_KEY` & `ACCOUNT2_PRIVATE_KEY`
-4. Run `yarn run deploy:localhost` to deploy the contracts under `/contracts` to the local blockchain.
-5. If you wish to setup some pre-defined NFTs, run `yarn run setup-marketplace:localhost`.
-6. Run `npm run dev` to start frontend application. Now you may access the marketplace on [http://localhost:3000](http://localhost:3000).
+4. Deploy the contracts under `/contracts` to the local blockchain.
+```
+yarn run deploy:localhost
+```
+5. (Optional) Setup some pre-defined NFTs.
+```
+yarn run setup-marketplace:localhost
+```
+6. Start hosting the frontend application.
+```
+yarn run dev
+``` 
+Now you may access the marketplace on [http://localhost:3000](http://localhost:3000).
 7. Make sure to use `Localhost 8545` as the Metamask's network.
    - Network Name: `Localhost 8545` (Anything you like)
    - RPC URL: `http://localhost:8545`
