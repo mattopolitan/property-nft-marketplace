@@ -10,7 +10,11 @@
     "test": "hardhat test",
     "node": "hardhat node",
     "deploy:localhost": "hardhat run scripts/deploy.ts --network localhost",
-    "setup-marketplace:localhost": "hardhat run scripts/setupMarket.ts --network localhost"
+    "deploy:goerli": "hardhat run scripts/deploy.ts --network goerli",
+    "deploy:mainnet": "hardhat run scripts/deploy.ts --network mainnet",
+    "setup-marketplace:localhost": "hardhat run scripts/setupMarket.ts --network localhost",
+    "setup-marketplace:goerli": "hardhat run scripts/setupMarket.ts --network goerli",
+    "setup-marketplace:mainnet": "hardhat run scripts/setupMarket.ts --network mainnet"
   },
   "dependencies": {
     "@emotion/cache": "^11.10.5",

@@ -101,6 +101,7 @@ export default function NFTCardCreation ({ addNFTToList }) {
           id="file-input"
           onChange={onFileChange}
         />
+      {/* TODO: Add more metadata input field based on Property NFT types */}
       <CardContent sx={{ paddingBottom: 0 }}>
         <TextField
           id="name-input"

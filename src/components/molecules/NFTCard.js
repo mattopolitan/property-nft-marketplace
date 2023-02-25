@@ -164,7 +164,7 @@ export default function NFTCard ({ nft, action, updateNFT }) {
         component="a" 
         onClick={handleCardImageClick}
       />
-
+      {/* TODO: Add more content displays for the NFT here */}
       <CardContent className={classNames.cardContent} >
         <NFTName name={name}/>
         <NFTDescription description={description} />
