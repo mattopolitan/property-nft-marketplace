@@ -18,6 +18,7 @@ export const config = {
 handler.post(async function handlePost ({ body, files }, response) {
   try {
     const fileUrl = await uploadFileToIPFS(files.file[0])
+    // TODO: Change image file to AWS file
     const metadata = {
       name: body.name[0],
       description: body.description[0],
@@ -51,6 +52,9 @@ async function uploadFileToIPFS (data) {
     console.log(error)
   }
 }
+
+// TODO: Upload File to AWS function
+
 async function uploadJsonToIPFS (json, fileName) {
   try {
     const { data: responseData } = await axios.post(`${pinataBaseUrl}/pinning/pinJSONToIPFS`, json, {
