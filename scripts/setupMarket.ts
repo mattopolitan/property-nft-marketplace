@@ -1,21 +1,10 @@
 import { ContractTransaction } from "ethers/lib"
 import hre from "hardhat"
-// import { PropertyAttributes } from "../src/models/property"
-
-// const propertyMetadata: PropertyAttributes[] = [
-//   {
-//     name: "XXX",
-//     location: "Aberdeen",
-//     block: "Block 1",
-//     floor: "Floor 1",
-//     flat: "Flat A"
-//   },
-// ]
 
 const propertiesNftMetadataUrl = [
   'https://ipfs.io/ipfs/QmY9fPk5pTyky2qoyZj1numVk5B4U9m49Gg7ZTMYgv5Cxm?filename=The%20Pavilia%20Bay',
   'https://ipfs.io/ipfs/QmZMSDZCcRguyNogkvUzxuD9Xxk1uH6BLLA4BsE3AP34Yz?filename=Parc%20City',
-  'https://ipfs.io/ipfs/QmQDUHDvZUjujG6yaYPYnBvorKCATF9Fyq5A7QDLyciaTk?filename=Ocean%20Pride',
+  // 'https://ipfs.io/ipfs/QmQDUHDvZUjujG6yaYPYnBvorKCATF9Fyq5A7QDLyciaTk?filename=Ocean%20Pride',
   'https://ipfs.io/ipfs/QmXDEB6DxwkmkGJGmEsJ4gusDte6EmsxiDScLndt5JXb3G?filename=Malibu',
   'https://ipfs.io/ipfs/QmUBCL1xtZ57aF4EXjtqsR1maX5fu68ChEEE9s6uMLMf9v?filename=LP6',
   'https://ipfs.io/ipfs/QmSZen5P1edNASdMyuy5UKKxCo3XkV5VACPoPaAWG4dtgc?filename=Mei%20Foo%20Sun%20Chuen',
