@@ -49,6 +49,7 @@ yarn run node
 3. Copy `.env.local.example` to `.env.local` and fill it with environment variables.
    - You'll need at least `ACCOUNT_PRIVATE_KEY`, `ACCOUNT2_PRIVATE_KEY`, `PINATA_API_KEY` & `PINATA_SECRET_KEY` in order to start the project.
    - It is recommended to use Account #0 and #1 private key as `ACCOUNT_PRIVATE_KEY` & `ACCOUNT2_PRIVATE_KEY`
+   - If you need to deploy contracts to Testnet or Mainnet, please change `ACCOUNT_PRIVATE_KEY` & `ACCOUNT2_PRIVATE_KEY` to wallet account you have balances.
 4. Deploy the contracts under `/contracts` to the local blockchain.
 ```
 yarn run deploy:localhost
